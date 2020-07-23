@@ -9,7 +9,19 @@ inputs:
     required: true
   set: # id of input
     description: "set expression"
-    required: true
+    required: false
+  clear: # id of input
+    description: "set expression"
+    required: false
+  remove: # id of input
+    description: "set expression"
+    required: false
+  namespace: # id of input
+    description: "namespace to add expression"
+    required: false
+  namespace-alias: # id of input
+    description: "namespace alias"
+    required: false
 outputs:
   result: # id of output
     description: "Something"
