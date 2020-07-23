@@ -1,0 +1,12 @@
+name: "Xml poke in nodejs"
+description: "modify xml with xmlpoke"
+inputs:
+  file-name: # id of input
+    description: "the file to poke"
+    required: true
+outputs:
+  result: # id of output
+    description: "Something"
+runs:
+  using: "node12"
+  main: "index.js"
