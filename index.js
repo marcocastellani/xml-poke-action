@@ -21,10 +21,11 @@ try {
   console.log(`Remoce ${remove}`);
 
   if (set !== "") {
-    xmlpoke(fileGlob, function (xml) {
+    const ret = xmlpoke(fileGlob, function (xml) {
       addns(xml, namespace, namespaceAlias);
-      xml.set("data/connString", "server=oh;db=hai");
+      xml.set(select, set);
     });
+    console.log(ret);
   }
 
   if (clear !== "") {
