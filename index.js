@@ -1,6 +1,7 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 const xmlpoke = require("xmlpoke");
+const fs = require("fs");
 
 const addns = (xml, ns, alias) => {
   if (ns !== undefined) xml.addNamespace(alias, ns);
@@ -21,11 +22,10 @@ try {
   console.log(`Remoce ${remove}`);
 
   if (set !== "") {
-    const ret = xmlpoke(fileGlob, function (xml) {
+    xmlpoke(fileGlob, function (xml) {
       addns(xml, namespace, namespaceAlias);
       xml.set(select, set);
     });
-    console.log(ret);
   }
 
   if (clear !== "") {
@@ -41,8 +41,9 @@ try {
       xml.remove(remove);
     });
   }
-
-  core.setOutput("result", "Done");
+  var contents = fs.readFileSync(fileGlob, "utf8");
+  console.log(contents);
+  core.setOutput("result", contents);
 
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2);
