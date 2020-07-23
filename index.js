@@ -20,23 +20,23 @@ try {
   console.log(`Clear ${clear}`);
   console.log(`Remoce ${remove}`);
 
-  if (set !== undefined) {
+  if (set !== "") {
     xmlpoke(fileGlob, function (xml) {
       addns(xml, namespace, namespaceAlias);
       xml.set("data/connString", "server=oh;db=hai");
     });
   }
 
-  if (clear !== undefined) {
-    addns(xml, namespace, namespaceAlias);
+  if (clear !== "") {
     xmlpoke(fileGlob, function (xml) {
+      addns(xml, namespace, namespaceAlias);
       xml.clear(clear);
     });
   }
 
-  if (remove !== undefined) {
-    addns(xml, namespace, namespaceAlias);
+  if (remove !== "") {
     xmlpoke(fileGlob, function (xml) {
+      addns(xml, namespace, namespaceAlias);
       xml.remove(remove);
     });
   }
