@@ -14,21 +14,24 @@ This action uses node version of xml poke to perform clean and transformations
 
 ### `set`
 
- The argument for xml.set method of xml poke.
+The argument for xml.set method of xml poke.
+
 ### `clear`
 
- The argument for xml.clear method of xml poke.
+The argument for xml.clear method of xml poke.
+
 ### `remove`
 
- The argument for xml.remove method of xml poke.
- 
- ### `namespace`
+The argument for xml.remove method of xml poke.
 
- The namespace to add
- 
- ### `namespace-alias`
+### `namespace`
 
- The namespace-alias to add
+The namespace to add
+
+### `namespace-alias`
+
+The namespace-alias to add
+
 ## Outputs
 
 ### `result`
@@ -37,11 +40,11 @@ The poked file content.
 
 ## Example usage
 
-- name: set versionCode
-  uses: marcocastellani/xml-poke@v5
-  with:
-    file-glob: "AndroidManifest.xml"
-    select: "manifest/@android:versionCode"
-    set: 123
-    namespace: "http://schemas.android.com/apk/res/android"
-    namespace-alias: android
+    name: set versionCode
+    uses: marcocastellani/xml-poke@v5
+    with:
+      file-glob: "AndroidManifest.xml"
+      select: "manifest/@android:versionCode"
+      set: 123
+      namespace: "http://schemas.android.com/apk/res/android"
+      namespace-alias: android
