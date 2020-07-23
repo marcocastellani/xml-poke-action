@@ -1,8 +1,14 @@
 name: "Xml poke in nodejs"
 description: "modify xml with xmlpoke"
 inputs:
-  file-name: # id of input
-    description: "the file to poke"
+  file-glob: # id of input
+    description: "the file glob to poke"
+    required: true
+  select: # id of input
+    description: "the select"
+    required: true
+  set: # id of input
+    description: "set expression"
     required: true
 outputs:
   result: # id of output
